@@ -1,6 +1,5 @@
 #include "players/human-player.h"
 
-
 std::pair<int, int> human_player_t::make_move(const field_t &my_field, const field_t &enemy_field) {
   output_stream << "Your field:" << std::endl;
   output_stream << my_field << std::endl;

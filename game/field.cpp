@@ -60,7 +60,7 @@ field_t::field_t(uint32_t seed) : field(FIELD_SIZE, std::string(FIELD_SIZE, EMPT
 }
 
 field_t::field_t(std::vector<std::string> field) : field(std::move(field)) {
-  assert(this->field.size() == FIELD_SIZE);
+  // assert(this->field.size() == FIELD_SIZE);
   for (const auto &line : this->field) {
     assert(line.size() == FIELD_SIZE);
     assert(std::all_of(line.begin(), line.end(), [](char c) { return c == EMPTY_CELL || c == SHIP_CELL; }));

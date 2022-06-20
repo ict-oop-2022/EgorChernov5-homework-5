@@ -43,10 +43,9 @@ bool hasOtherSHIP_CELL(field_t &field, std::pair<int, int> coords) {
     if (delta > MAX_SHIP_LEN) {
       delta = 0;
       scan_dir++;
-      if (scan_dir >= field_t::DIRECTIONS.size()) {
+      if (scan_dir >= field_t::DIRECTIONS.size())
         // directions exhausted, no ship cells around
         return false;
-      }
       // start with new direction
     }
 
@@ -54,9 +53,8 @@ bool hasOtherSHIP_CELL(field_t &field, std::pair<int, int> coords) {
     int x = coords.first + (delta + 1) * field_t::DIRECTIONS[scan_dir].first;
     int y = coords.second + (delta + 1) * field_t::DIRECTIONS[scan_dir].second;
     delta++;
-    if (!field_t::is_cell_valid(x, y)) {
+    if (!field_t::is_cell_valid(x, y))
       continue;
-    }
 
     auto cell = field[x][y];
     if (cell == field_t::EMPTY_CELL || cell == field_t::MISS_CELL) {
@@ -66,9 +64,8 @@ bool hasOtherSHIP_CELL(field_t &field, std::pair<int, int> coords) {
     }
 
     // another ship cell is around, break the loop
-    if (cell == field_t::SHIP_CELL) {
+    if (cell == field_t::SHIP_CELL)
       return true;
-    }
   }
 }
 
