@@ -1,6 +1,6 @@
 #To choose 'easy' version of homework you should remove '#' on the second line and remove the third line at all
-#set(RUN_MODE "easy")
-set(RUN_MODE "hard")
+set(RUN_MODE "easy")
+#set(RUN_MODE "hard")
 
 include_directories(.)
 
